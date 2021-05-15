@@ -20,4 +20,4 @@ declare global {
         'a-elem': MyElement;
     }
 }
-//# sourceMappingURL=a-elem.d.ts.map
+//# sourceMappingURL=workflow.d.ts.map

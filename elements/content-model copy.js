@@ -82,4 +82,4 @@ MyElement = __decorate([
     customElement('a-elem')
 ], MyElement);
 export { MyElement };
-//# sourceMappingURL=a-elem.js.map
+//# sourceMappingURL=content-model%20copy.js.map

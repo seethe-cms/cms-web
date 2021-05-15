@@ -18,7 +18,7 @@ import { customElement } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-let MyElement = class MyElement extends LitElement {
+let ContentModel = class ContentModel extends LitElement {
     render() {
         return html `
       <main aria-label="Content Model">
@@ -50,7 +50,7 @@ let MyElement = class MyElement extends LitElement {
     `;
     }
 };
-MyElement.styles = css `
+ContentModel.styles = css `
     ul,
     ul * {
       all: unset;
@@ -78,8 +78,8 @@ MyElement.styles = css `
       gap: 40px;
     }
   `;
-MyElement = __decorate([
-    customElement('a-elem')
-], MyElement);
-export { MyElement };
-//# sourceMappingURL=a-elem.js.map
+ContentModel = __decorate([
+    customElement('content-model')
+], ContentModel);
+export { ContentModel };
+//# sourceMappingURL=content-model.js.map

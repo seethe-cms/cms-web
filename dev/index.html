@@ -7,10 +7,10 @@
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
     <script type="module" src="../cms-web.js"></script>
-    <script type="module" src="../elements/a-elem.js"></script>
-    <script type="module" src="../elements/delta-button.js"></script>
-    <script type="module" src="../elements/c-elem.js"></script>
-    <script type="module" src="../elements/base.js"></script>
+    <script type="module" src="../elements/delta-content-model.js"></script>
+    <script type="module" src="../elements/delta-content.js"></script>
+    <script type="module" src="../elements/delta-workflow.js"></script>
+    <script type="module" src="../elements/delta-base.js"></script>
     <style>
       p {
         border: solid 1px blue;
@@ -19,7 +19,7 @@
     </style>
   </head>
   <body>
-    <cms-web baseURL="/dev/"> </cms-web>
+    <cms-web baseURL="/dev/" ondeltabuild="console.log('yey')"> </cms-web>
   </body>
   <script type="module">
     //wait for web components event
@@ -30,6 +30,21 @@
     delta-button::part(main),
     button {
       color: red;
+    }
+
+    :root {
+      box-sizing: border-box;
+      all: initial;
+    }
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+    *:not(style, script, svg, svg *, head, head *),
+    *:before:not(style, script, svg, svg *, head, head *),
+    *:before:not(style, script, svg, svg *, head, head *) {
+      all: inherit;
     }
   </style>
 </html>

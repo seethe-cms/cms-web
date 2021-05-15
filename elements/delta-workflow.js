@@ -18,10 +18,11 @@ import { customElement } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-let MyElement = class MyElement extends LitElement {
+let DeltaWorkflow = class DeltaWorkflow extends LitElement {
     render() {
         return html `
       <main aria-label="Content Model">
+        workflow
         <header id="page-header">
           <div role="presentation">
             <delta-button outlined>Add content category</delta-button>
@@ -50,7 +51,7 @@ let MyElement = class MyElement extends LitElement {
     `;
     }
 };
-MyElement.styles = css `
+DeltaWorkflow.styles = css `
     ul,
     ul * {
       all: unset;
@@ -78,8 +79,8 @@ MyElement.styles = css `
       gap: 40px;
     }
   `;
-MyElement = __decorate([
-    customElement('a-elem')
-], MyElement);
-export { MyElement };
-//# sourceMappingURL=a-elem.js.map
+DeltaWorkflow = __decorate([
+    customElement('delta-workflow')
+], DeltaWorkflow);
+export { DeltaWorkflow };
+//# sourceMappingURL=delta-workflow.js.map

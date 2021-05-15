@@ -60,16 +60,16 @@ export class MyElement extends LitElement {
         component: 'delta-base',
         children: [
           {
-            path: 'a',
-            component: 'a-elem',
+            path: 'content-model',
+            component: 'delta-content-model',
           },
           {
-            path: 'b',
-            component: 'delta-button',
+            path: 'content',
+            component: 'delta-content',
           },
           {
-            path: 'c',
-            component: 'c-elem',
+            path: 'workflow',
+            component: 'delta-workflow',
           },
         ],
       },

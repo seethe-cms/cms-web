@@ -19,7 +19,7 @@ import { customElement } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-let MyElement = class MyElement extends LitElement {
+let DeltaBase = class DeltaBase extends LitElement {
     render() {
         return html `
       <header>
@@ -47,10 +47,20 @@ let MyElement = class MyElement extends LitElement {
     `;
     }
 };
-MyElement.styles = css `
-    ul,
-    ul * {
-      all: unset;
+DeltaBase.styles = css `
+    :host {
+      box-sizing: border-box;
+      all: initial;
+    }
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+    *:not(style, script, svg, svg *),
+    *:before:not(style, script, svg, svg *),
+    *:before:not(style, script, svg, svg *) {
+      all: inherit;
     }
     ul {
       display: flex;
@@ -61,8 +71,10 @@ MyElement.styles = css `
       color: black;
       background-color: #9999ff;
     }
+    li {
+      display: contents;
+    }
     a {
-      all: unset;
       display: inline-block;
       padding-left: 30px;
       padding-right: 30px;
@@ -78,8 +90,8 @@ MyElement.styles = css `
       background-color: #a200ff;
     }
   `;
-MyElement = __decorate([
+DeltaBase = __decorate([
     customElement('delta-base')
-], MyElement);
-export { MyElement };
-//# sourceMappingURL=base.js.map
+], DeltaBase);
+export { DeltaBase };
+//# sourceMappingURL=delta-base.js.map

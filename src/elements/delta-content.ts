@@ -8,38 +8,15 @@ import './delta-button';
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-//TODO "/dev" should be dynamic, based on vaadin-router "baseURL"
 /**
  * An example element.
  *
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('delta-base')
-export class MyElement extends LitElement {
+@customElement('delta-content')
+export class DeltaContent extends LitElement {
   static styles = css`
-    header > nav {
-      color: black;
-      background-color: #9999ff;
-      display: flex;
-      padding-left: 200px;
-      padding-right: 200px;
-    }
-    header > nav > * {
-      all: unset;
-      padding-left: 30px;
-      padding-right: 30px;
-      padding-top: 15px;
-      padding-bottom: 15px;
-    }
-    header > nav > *:hover {
-      cursor: pointer;
-      background-color: #6600ff;
-    }
-    header > nav > *:focus {
-      cursor: pointer;
-      background-color: #a200ff;
-    }
     ul,
     ul * {
       all: unset;
@@ -59,8 +36,7 @@ export class MyElement extends LitElement {
       background-color: grey;
       padding: 25px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      flex-direction: row-reverse;
     }
     #page-header > div {
       width: fit-content;
@@ -70,24 +46,15 @@ export class MyElement extends LitElement {
   `;
   render() {
     return html`
-      <header>
-        <!-- TODO: Make this an element -->
-        <nav>
-          <a href="/dev/">Content Model</a>
-          <a href="/dev/a">Content</a>
-          <a href="/dev/b">Workflow</a>
-          <a href="/dev/c">Media</a>
-        </nav>
-        <!-- -->
-      </header>
-      <div id="page-header">
-        <div role="presentation">
-          <delta-button outlined>Add content category</delta-button>
-          <delta-button>Add content type</delta-button>
-        </div>
-      </div>
-      <main>
-        <div id="categories">
+      <main aria-label="Content Model">
+        content
+        <header id="page-header">
+          <div role="presentation">
+            <delta-button outlined>Add content category</delta-button>
+            <delta-button>Add content type</delta-button>
+          </div>
+        </header>
+        <nav id="categories">
           <!-- TODO: look for better html tag for title semantics -->
           <h1>Categories</h1>
           <ul>
@@ -104,8 +71,7 @@ export class MyElement extends LitElement {
               <a href="/dev/c">Cat 4</a>
             </li>
           </ul>
-        </div>
-        <slot></slot>
+        </nav>
       </main>
     `;
   }
@@ -113,6 +79,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'delta-base': MyElement;
+    'delta-content': DeltaContent;
   }
 }

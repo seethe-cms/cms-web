@@ -18,14 +18,18 @@ import { customElement } from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-let MyElement = class MyElement extends LitElement {
+let DeltaContentModel = class DeltaContentModel extends LitElement {
     render() {
         return html `
       <main aria-label="Content Model">
         <header id="page-header">
           <div role="presentation">
-            <delta-button outlined>Add content category</delta-button>
-            <delta-button>Add content type</delta-button>
+            <delta-button outlined @click=${this._addContentCategory}
+              >Add content category</delta-button
+            >
+            <delta-button @click=${this._addContent}
+              >Add content type</delta-button
+            >
           </div>
         </header>
         <nav id="categories">
@@ -49,8 +53,18 @@ let MyElement = class MyElement extends LitElement {
       </main>
     `;
     }
+    _addContentCategory(e) {
+        console.log('cat');
+        const event = new CustomEvent('cat', { detail: 'cat' });
+        this.dispatchEvent(event);
+    }
+    _addContent(e) {
+        console.log('type');
+        const event = new CustomEvent('type', { detail: 'type' });
+        this.dispatchEvent(event);
+    }
 };
-MyElement.styles = css `
+DeltaContentModel.styles = css `
     ul,
     ul * {
       all: unset;
@@ -78,8 +92,8 @@ MyElement.styles = css `
       gap: 40px;
     }
   `;
-MyElement = __decorate([
-    customElement('a-elem')
-], MyElement);
-export { MyElement };
-//# sourceMappingURL=a-elem.js.map
+DeltaContentModel = __decorate([
+    customElement('delta-content-model')
+], DeltaContentModel);
+export { DeltaContentModel };
+//# sourceMappingURL=delta-content-model.js.map

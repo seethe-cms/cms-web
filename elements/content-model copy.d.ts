@@ -20,4 +20,4 @@ declare global {
         'a-elem': MyElement;
     }
 }
-//# sourceMappingURL=a-elem.d.ts.map
+//# sourceMappingURL=content-model%20copy.d.ts.map

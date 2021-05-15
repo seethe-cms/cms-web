@@ -11,13 +11,15 @@ import { LitElement } from 'lit';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-export declare class MyElement extends LitElement {
+export declare class DeltaContentModel extends LitElement {
     static styles: import("lit").CSSResultGroup;
-    render(): import("lit").TemplateResult<1>;
+    protected render(): import("lit").TemplateResult<1>;
+    private _addContentCategory;
+    private _addContent;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        'a-elem': MyElement;
+        'delta-content-model': DeltaContentModel;
     }
 }
-//# sourceMappingURL=a-elem.d.ts.map
+//# sourceMappingURL=delta-content-model.d.ts.map

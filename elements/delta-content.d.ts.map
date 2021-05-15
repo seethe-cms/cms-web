@@ -1,0 +1,1 @@
+{"version":3,"file":"delta-content.d.ts","sourceRoot":"","sources":["../src/elements/delta-content.ts"],"names":[],"mappings":"AAAA,OAAO,gBAAgB,CAAC;AACxB;;;;GAIG;AAEH,OAAO,EAAE,UAAU,EAAa,MAAM,KAAK,CAAC;AAG5C;;;;;GAKG;AACH,qBACa,YAAa,SAAQ,UAAU;IAC1C,MAAM,CAAC,MAAM,+BA2BX;IACF,MAAM;CA+BP;AAED,OAAO,CAAC,MAAM,CAAC;IACb,UAAU,qBAAqB;QAC7B,eAAe,EAAE,YAAY,CAAC;KAC/B;CACF"}
