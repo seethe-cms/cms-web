@@ -11,40 +11,66 @@
     <script type="module" src="../elements/delta-content.js"></script>
     <script type="module" src="../elements/delta-workflow.js"></script>
     <script type="module" src="../elements/delta-base.js"></script>
+    <script type="module" src="../elements/delta-button.js"></script>
+    <script type="module" src="../elements/router/delta-children.js"></script>
+    <script type="module" src="../elements/router/delta-router.js"></script>
+    <script type="module" src="../elements/router/delta-route.js"></script>
     <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
+      :root {
+        box-sizing: border-box;
+        all: initial;
       }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      /*
+      *:not(style, script, svg, svg *, head, head *),
+      *:before:not(style, script, svg, svg *, head, head *),
+      *:before:not(style, script, svg, svg *, head, head *) {
+        all: inherit;
+      }
+      */
     </style>
   </head>
   <body>
-    <cms-web baseURL="/dev/" ondeltabuild="console.log('yey')"> </cms-web>
+    <delta-router base-url="/dev">
+      <delta-route slot="">
+        <!-- layout for /* and /-->
+        <my-elem slot="layout"></my-elem>
+        <!-- page for /-->
+        <my-elem-p slot="page"></my-elem-p>
+        <delta-children reset-layout>
+          <!-- layout for /* -->
+          <my-elem slot="layout"></my-elem>
+          <delta-route slot="/bernardo">
+            <!-- page for /bernardo -->
+            <my-elem slot="page"></my-elem>
+          </delta-route>
+          <delta-route slot="/catarina">
+            <!-- page for /catarina -->
+            <my-elem></my-elem>
+          </delta-route>
+        </delta-children>
+      </delta-route>
+    </delta-router>
+    <!--<cms-web baseURL="/dev/" ondeltabuild="console.log('yey')"> </cms-web>-->
+    <div style="display: contents" id="sdasaa">
+      <a href="#">anch</a>
+    </div>
   </body>
   <script type="module">
     //wait for web components event
     'use strict';
-
+    document.querySelector('#sdasaa').addEventListener('click', (e) => {
+      console.log(e.target.nodeName);
+    });
   </script>
   <style>
     delta-button::part(main),
     button {
       color: red;
-    }
-
-    :root {
-      box-sizing: border-box;
-      all: initial;
-    }
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
-    *:not(style, script, svg, svg *, head, head *),
-    *:before:not(style, script, svg, svg *, head, head *),
-    *:before:not(style, script, svg, svg *, head, head *) {
-      all: inherit;
     }
   </style>
 </html>
